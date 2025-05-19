@@ -8,6 +8,7 @@ export function About() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0");
           entry.target.classList.add("animate-fade-in");
           observer.unobserve(entry.target);
         }
@@ -28,9 +29,9 @@ export function About() {
 
   return (
     <section id="about" ref={sectionRef} className="section-container opacity-0">
-      <h2 className="section-title">About Me</h2>
+      <h2 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">About Me</h2>
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div className="space-y-4">
+        <div className="space-y-4 backdrop-blur-sm bg-background/30 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all">
           <p className="text-lg">
             I am a passionate developer with over 5 years of experience in creating
             web applications. I specialize in React, Node.js, and TypeScript, and I'm
@@ -46,7 +47,7 @@ export function About() {
             skills and grow as a developer.
           </p>
         </div>
-        <div className="bg-muted rounded-lg p-6 h-64 flex items-center justify-center">
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 backdrop-blur-sm rounded-xl p-6 h-64 flex items-center justify-center border border-primary/10 hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1">
           <p className="text-lg font-medium">Profile Image Placeholder</p>
         </div>
       </div>

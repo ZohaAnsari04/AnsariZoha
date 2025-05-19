@@ -28,6 +28,7 @@ export function Skills() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0");
           entry.target.classList.add("animate-fade-in");
           observer.unobserve(entry.target);
         }
@@ -53,44 +54,56 @@ export function Skills() {
 
   return (
     <section id="skills" ref={sectionRef} className="section-container opacity-0">
-      <h2 className="section-title">My Skills</h2>
+      <h2 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">My Skills</h2>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold">Frontend</h3>
+        <div className="space-y-6 backdrop-blur-sm bg-background/30 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all">
+          <h3 className="text-xl font-semibold text-gradient">Frontend</h3>
           {frontendSkills.map((skill, index) => (
             <div key={index} className="space-y-2">
               <div className="flex justify-between">
                 <span>{skill.name}</span>
                 <span>{skill.level}%</span>
               </div>
-              <Progress value={skill.level} className="h-2" />
+              <Progress value={skill.level} className="h-2 bg-primary/10" 
+                style={{ 
+                  background: 'linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%)',
+                }} 
+              />
             </div>
           ))}
         </div>
         
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold">Backend</h3>
+        <div className="space-y-6 backdrop-blur-sm bg-background/30 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all">
+          <h3 className="text-xl font-semibold text-gradient">Backend</h3>
           {backendSkills.map((skill, index) => (
             <div key={index} className="space-y-2">
               <div className="flex justify-between">
                 <span>{skill.name}</span>
                 <span>{skill.level}%</span>
               </div>
-              <Progress value={skill.level} className="h-2" />
+              <Progress value={skill.level} className="h-2 bg-primary/10" 
+                style={{ 
+                  background: 'linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%)',
+                }} 
+              />
             </div>
           ))}
         </div>
         
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold">Other Skills</h3>
+        <div className="space-y-6 backdrop-blur-sm bg-background/30 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all">
+          <h3 className="text-xl font-semibold text-gradient">Other Skills</h3>
           {otherSkills.map((skill, index) => (
             <div key={index} className="space-y-2">
               <div className="flex justify-between">
                 <span>{skill.name}</span>
                 <span>{skill.level}%</span>
               </div>
-              <Progress value={skill.level} className="h-2" />
+              <Progress value={skill.level} className="h-2 bg-primary/10" 
+                style={{ 
+                  background: 'linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%)',
+                }} 
+              />
             </div>
           ))}
         </div>

@@ -44,6 +44,7 @@ export function Projects() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0");
           entry.target.classList.add("animate-fade-in");
           observer.unobserve(entry.target);
         }
@@ -64,12 +65,16 @@ export function Projects() {
 
   return (
     <section id="projects" ref={sectionRef} className="section-container opacity-0">
-      <h2 className="section-title">My Projects</h2>
+      <h2 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">My Projects</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <Card key={index} className="card-hover">
+          <Card 
+            key={index} 
+            className="card-hover backdrop-blur-sm bg-background/30 border border-primary/10 hover:border-primary/30 transition-all duration-300"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <CardTitle className="text-gradient">{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
@@ -77,7 +82,7 @@ export function Projects() {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="bg-secondary text-secondary-foreground text-xs px-2 py-1 rounded-full"
+                    className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full backdrop-blur-sm border border-primary/10"
                   >
                     {tag}
                   </span>
@@ -85,7 +90,12 @@ export function Projects() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button asChild variant="outline" size="sm">
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm" 
+                className="rounded-full border border-primary/20 hover:bg-primary/10 transition-all duration-300"
+              >
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
                   View Project
                 </a>

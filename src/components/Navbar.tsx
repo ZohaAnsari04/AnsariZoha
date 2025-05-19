@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 interface NavLink {
   name: string;
@@ -52,11 +53,11 @@ export function Navbar() {
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "bg-background/50 backdrop-blur-xl border-b border-primary/10" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="#" className="font-bold text-xl">Portfolio</a>
+        <a href="#" className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">Portfolio</a>
         
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -73,23 +74,38 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           
-          {/* Mobile menu button */}
-          <button className="md:hidden" aria-label="Toggle menu">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+          {/* Mobile menu */}
+          <Sheet>
+            <SheetTrigger className="md:hidden p-2 rounded-full bg-primary/10 text-primary border border-primary/20">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </SheetTrigger>
+            <SheetContent className="backdrop-blur-xl bg-background/80 border-primary/10">
+              <nav className="flex flex-col space-y-6 mt-8">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
