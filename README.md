@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# Glow Page Stack
 
-## Project info
+A modern portfolio website showcasing frontend development skills and projects. Built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/19e04220-8fc3-4f4a-93c7-e1f164898d5d
+## ✨ Features
 
-## How can I edit this code?
+- Responsive design with dark/light theme
+- Modern UI components using shadcn-ui
+- Interactive project showcase
+- Skills visualization
+- Contact section with social links
+- SEO optimized
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- React + TypeScript
+- Tailwind CSS
+- Vite
+- shadcn-ui
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/19e04220-8fc3-4f4a-93c7-e1f164898d5d) and start prompting.
+## 🚀 Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js & npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd glow-page-stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
+### Deployment Platforms
+This project can be deployed to:
 
-**Edit a file directly in GitHub**
+- Vercel
+- Netlify
+- GitHub Pages
+- Any static hosting service
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📝 License
+This project is open source and available under the MIT License.
 
-**Use GitHub Codespaces**
+## 🤝 Contributing
+Contributions are welcome! Please feel free to:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Fork the repository
+2. Create a feature branch
+3. Submit a Pull Request
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/19e04220-8fc3-4f4a-93c7-e1f164898d5d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Built with 💻 by Zoha Ansari

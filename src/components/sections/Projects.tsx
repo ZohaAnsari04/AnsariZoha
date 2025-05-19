@@ -12,29 +12,23 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with payment processing and inventory management.",
-    tags: ["React", "Node.js", "MongoDB"],
-    link: "#",
+    title: "To-Do List App",
+    description: "A mindful productivity app that combines smart task management with time-blocking, gamification, and reflection tools.",
+    tags: ["React", "Typescript", "CSS"],
+    link: "https://github.com/ZohaAnsari04/Todo_List",
   },
   {
-    title: "Task Management App",
-    description: "A productivity application for teams with real-time updates and collaboration features.",
-    tags: ["React", "Firebase", "Tailwind CSS"],
-    link: "#",
+    title: "Calculator App",
+    description: "CoreCalc is a modern calculator web app. It features basic arithmetic operations, percentage calculations, and a sleek glass-morphic UI.",
+    tags: ["React", "Typescript", "CSS"],
+    link: "https://github.com/ZohaAnsari04/CoreCalc",
   },
   {
-    title: "Portfolio Website",
-    description: "A responsive portfolio website with dark mode and smooth animations.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    link: "#",
-  },
-  {
-    title: "Weather Application",
-    description: "A weather forecast application with location detection and daily/weekly predictions.",
-    tags: ["JavaScript", "API Integration", "CSS"],
-    link: "#",
-  },
+    title: "IndiVisit - Travel Website",
+    description: "An immersive travel platform showcasing India's diverse destinations with interactive maps, virtual tours, and local cultural insights.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/ZohaAnsari04/IndiVisit",
+  }
 ];
 
 export function Projects() {

@@ -23,12 +23,12 @@ export function Hero() {
       <div className="text-center max-w-3xl mx-auto z-10 backdrop-blur-sm p-8 rounded-2xl neo-card transform hover:translate-y-[-5px] transition-all duration-500">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">
           Hello, I'm <span className="relative inline-block">
-            <span className="relative z-10">Jane Doe</span>
-            <span className="absolute -bottom-1 left-0 w-full h-3 bg-primary/10 rounded-full -z-10"></span>
+            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-lg">Ansari Zoha</span>
+            <span className="absolute -bottom-1 left-0 w-full h-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-sm -z-10"></span>
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-foreground/80 mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          A passionate full-stack developer building the future of web.
+          A passionate Frontend Developer building the future of web.
         </p>
         <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <Button 
@@ -51,17 +51,13 @@ export function Hero() {
         
         {/* Social media icons */}
         <div className="mt-10 flex justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-          <a href="#" className="bg-background/50 p-3 rounded-full border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all hover:scale-110 hover:-translate-y-1 duration-300">
+          <a href="https://github.com/ZohaAnsari04" target="_blank" className="bg-background/50 p-3 rounded-full border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all hover:scale-110 hover:-translate-y-1 duration-300">
             <Github className="h-5 w-5 text-primary" />
             <span className="sr-only">GitHub</span>
           </a>
-          <a href="#" className="bg-background/50 p-3 rounded-full border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all hover:scale-110 hover:-translate-y-1 duration-300">
+          <a href="https://www.linkedin.com/in/ansari-zoha-najmul-kalam-819610238/" target="_blank" className="bg-background/50 p-3 rounded-full border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all hover:scale-110 hover:-translate-y-1 duration-300">
             <Linkedin className="h-5 w-5 text-primary" />
             <span className="sr-only">LinkedIn</span>
-          </a>
-          <a href="#" className="bg-background/50 p-3 rounded-full border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all hover:scale-110 hover:-translate-y-1 duration-300">
-            <Twitter className="h-5 w-5 text-primary" />
-            <span className="sr-only">Twitter</span>
           </a>
         </div>
       </div>

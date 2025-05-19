@@ -1,18 +1,19 @@
-
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { User, FolderKanban, Code, Mail, Menu } from "lucide-react";
 
 interface NavLink {
   name: string;
   href: string;
+  icon: React.ReactNode;
 }
 
 const navLinks: NavLink[] = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "#about", icon: <User className="w-4 h-4" /> },
+  { name: "Projects", href: "#projects", icon: <FolderKanban className="w-4 h-4" /> },
+  { name: "Skills", href: "#skills", icon: <Code className="w-4 h-4" /> },
+  { name: "Contact", href: "#contact", icon: <Mail className="w-4 h-4" /> },
 ];
 
 export function Navbar() {
@@ -57,15 +58,16 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="#" className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">Portfolio</a>
+        <a href="#" className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">Ansari Zoha</a>
         
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`nav-link ${activeSection === link.href.slice(1) ? "nav-link-active" : ""}`}
+              className={`nav-link flex items-center gap-2 ${activeSection === link.href.slice(1) ? "nav-link-active" : ""}`}
             >
+              {link.icon}
               {link.name}
             </a>
           ))}
@@ -77,20 +79,7 @@ export function Navbar() {
           {/* Mobile menu */}
           <Sheet>
             <SheetTrigger className="md:hidden p-2 rounded-full bg-primary/10 text-primary border border-primary/20">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <Menu className="w-5 h-5" />
             </SheetTrigger>
             <SheetContent className="backdrop-blur-xl bg-background/80 border-primary/10">
               <nav className="flex flex-col space-y-6 mt-8">
@@ -98,8 +87,9 @@ export function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-lg font-medium hover:text-primary transition-colors"
+                    className="text-lg font-medium hover:text-primary transition-colors flex items-center gap-3"
                   >
+                    {link.icon}
                     {link.name}
                   </a>
                 ))}

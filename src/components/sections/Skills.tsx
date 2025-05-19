@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { Progress } from "@/components/ui/progress";
 
@@ -9,16 +8,25 @@ interface Skill {
 }
 
 const skills: Skill[] = [
+  // Frontend Core
   { name: "HTML & CSS", level: 90, category: "frontend" },
   { name: "JavaScript", level: 85, category: "frontend" },
-  { name: "React", level: 80, category: "frontend" },
-  { name: "TypeScript", level: 75, category: "frontend" },
-  { name: "Node.js", level: 75, category: "backend" },
-  { name: "Express", level: 70, category: "backend" },
-  { name: "MongoDB", level: 65, category: "backend" },
-  { name: "SQL", level: 60, category: "backend" },
-  { name: "Git", level: 80, category: "other" },
-  { name: "UI/UX Design", level: 70, category: "other" },
+  { name: "TypeScript", level: 85, category: "frontend" },
+  { name: "Next.js", level: 82, category: "frontend" },
+  { name: "Tailwind CSS", level: 90, category: "frontend" },
+  { name: "Responsive Design", level: 92, category: "frontend" },
+
+  // Development Tools
+  { name: "Git & GitHub", level: 85, category: "other" },
+  { name: "Webpack/Vite", level: 80, category: "other" },
+  { name: "Jest/Testing", level: 75, category: "other" },
+  { name: "UI/UX Design", level: 80, category: "other" },
+  { name: "Figma", level: 78, category: "other" },
+
+  // Backend Basics
+  { name: "RESTful APIs", level: 80, category: "backend" },
+  { name: "Node.js", level: 70, category: "backend" },
+  { name: "Express", level: 65, category: "backend" },
 ];
 
 export function Skills() {

@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from "react";
-import { User, Code, Globe, Coffee } from "lucide-react";
+import { User, Code, Globe, Palette } from "lucide-react";
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -38,9 +37,7 @@ export function About() {
               <User className="h-6 w-6 text-primary animate-pulse" />
             </div>
             <p className="text-lg">
-              I am a passionate developer with over 5 years of experience in creating
-              web applications. I specialize in React, Node.js, and TypeScript, and I'm
-              always eager to learn new technologies.
+              I am a passionate Frontend Developer with expertise in creating beautiful and responsive web applications. I specialize in React, TypeScript, and modern CSS frameworks, constantly pushing the boundaries of user interface design.
             </p>
           </div>
           
@@ -49,9 +46,7 @@ export function About() {
               <Code className="h-6 w-6 text-primary animate-pulse" />
             </div>
             <p className="text-lg">
-              When I'm not coding, you can find me hiking in the mountains or reading
-              a good book. I believe in continuous learning and pushing the boundaries
-              of what's possible with code.
+              My toolkit includes React, Next.js, Tailwind CSS, and TypeScript. I'm passionate about creating performant, accessible, and visually appealing interfaces that provide exceptional user experiences.
             </p>
           </div>
           
@@ -60,8 +55,7 @@ export function About() {
               <Globe className="h-6 w-6 text-primary animate-pulse" />
             </div>
             <p className="text-lg">
-              I'm currently looking for new opportunities where I can contribute my
-              skills and grow as a developer in the exciting world of Web 3.0.
+              I stay current with the latest frontend trends and best practices, from responsive design to animation libraries and state management solutions. Always excited to learn and implement new technologies.
             </p>
           </div>
         </div>
@@ -74,9 +68,9 @@ export function About() {
           
           <div className="z-10 text-center">
             <div className="mb-4 inline-flex p-4 rounded-full bg-primary/10 border border-primary/20">
-              <Coffee className="h-12 w-12 text-primary animate-float" />
+              <Palette className="h-12 w-12 text-primary" />
             </div>
-            <p className="text-lg font-medium">Passionate about crafting exceptional digital experiences</p>
+            <p className="text-lg font-medium">Crafting beautiful and intuitive user interfaces with passion and precision</p>
           </div>
         </div>
       </div>

@@ -1,13 +1,8 @@
 
-import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+import { useEffect, useRef } from "react";
+import { Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 
 export function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
@@ -33,104 +28,83 @@ export function Contact() {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
-  };
-
   return (
     <section id="contact" ref={sectionRef} className="section-container opacity-0">
-      <h2 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70">Get In Touch</h2>
-      
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="backdrop-blur-sm bg-background/30 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all">
-          <p className="text-lg mb-6">
-            I'm currently open for freelance projects and job opportunities. Feel free to reach out if you have any questions or just want to say hello!
-          </p>
-          
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="bg-primary/10 text-primary rounded-full p-3 backdrop-blur-sm border border-primary/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-              </div>
-              <span>+1 (555) 123-4567</span>
-            </div>
+      <div className="max-w-4xl mx-auto relative">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        </div>
+
+        <h2 className="section-title bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/70 mb-12">Let's Connect</h2>
+        
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Left side: Contact info */}
+          <div className="backdrop-blur-sm bg-background/30 p-8 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+            <h3 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">Get in Touch</h3>
+            <p className="text-lg mb-8 text-foreground/80">
+              Looking for a passionate frontend developer to bring your vision to life? Let's create something amazing together!
+            </p>
             
-            <div className="flex items-center gap-3">
-              <div className="bg-primary/10 text-primary rounded-full p-3 backdrop-blur-sm border border-primary/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+            <div className="space-y-6">
+              <a href="mailto:zoha101204@gmail.com" 
+                className="flex items-center gap-4 p-4 rounded-xl bg-background/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="bg-primary/10 text-primary rounded-full p-3 backdrop-blur-sm border border-primary/20 group-hover:scale-110 transition-transform">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <span className="group-hover:text-primary transition-colors">Contact Me</span>
+              </a>
+              
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-background/50">
+                <div className="bg-primary/10 text-primary rounded-full p-3 backdrop-blur-sm border border-primary/20">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <span>Mumbai, India</span>
               </div>
-              <span>hello@example.com</span>
             </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="bg-primary/10 text-primary rounded-full p-3 backdrop-blur-sm border border-primary/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-              <span>San Francisco, CA</span>
+          </div>
+
+          {/* Right side: Social links */}
+          <div className="backdrop-blur-sm bg-background/30 p-8 rounded-2xl border border-primary/10 hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+            <h3 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">Follow Me</h3>
+            <p className="text-lg mb-8 text-foreground/80">
+              Connect with me on social media to see my latest projects and updates.
+            </p>
+
+            <div className="grid grid-cols-3 gap-4">
+              <a href="https://github.com/ZohaAnsari04" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 p-4 rounded-xl bg-background/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="bg-primary/10 text-primary rounded-full p-4 backdrop-blur-sm border border-primary/20 group-hover:scale-110 transition-transform">
+                  <Github className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium group-hover:text-primary transition-colors">GitHub</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/ansari-zoha-najmul-kalam-819610238/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 p-4 rounded-xl bg-background/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="bg-primary/10 text-primary rounded-full p-4 backdrop-blur-sm border border-primary/20 group-hover:scale-110 transition-transform">
+                  <Linkedin className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium group-hover:text-primary transition-colors">LinkedIn</span>
+              </a>
+
+              <a href="mailto:zoha101204@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 p-4 rounded-xl bg-background/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="bg-primary/10 text-primary rounded-full p-4 backdrop-blur-sm border border-primary/20 group-hover:scale-110 transition-transform">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <span className="text-sm font-medium group-hover:text-primary transition-colors">Email</span>
+              </a>
             </div>
           </div>
         </div>
-        
-        <form onSubmit={handleSubmit} className="space-y-4 backdrop-blur-sm bg-background/30 p-6 rounded-xl border border-primary/10 hover:border-primary/20 transition-all">
-          <div>
-            <Input 
-              type="text" 
-              placeholder="Your Name" 
-              required 
-              className="bg-background/50 border-primary/20 focus-visible:ring-primary/30"
-            />
-          </div>
-          <div>
-            <Input 
-              type="email" 
-              placeholder="Your Email" 
-              required 
-              className="bg-background/50 border-primary/20 focus-visible:ring-primary/30"
-            />
-          </div>
-          <div>
-            <Input 
-              type="text" 
-              placeholder="Subject" 
-              required 
-              className="bg-background/50 border-primary/20 focus-visible:ring-primary/30"
-            />
-          </div>
-          <div>
-            <Textarea 
-              placeholder="Your Message" 
-              rows={4} 
-              required 
-              className="bg-background/50 border-primary/20 focus-visible:ring-primary/30"
-            />
-          </div>
-          <Button 
-            type="submit" 
-            disabled={isSubmitting} 
-            className="w-full bg-gradient-to-r from-primary/80 to-primary hover:from-primary hover:to-primary/80 transition-all duration-300 rounded-lg"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </Button>
-        </form>
       </div>
     </section>
   );
